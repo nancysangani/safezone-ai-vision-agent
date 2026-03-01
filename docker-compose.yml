@@ -1,0 +1,80 @@
+version: "3.9"
+
+services:
+  # =========================
+  # Teach Mode API (start first)
+  # =========================
+  teach-mode:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: uv run --env-file .env python teach_mode_api.py
+    env_file:
+      - ./backend/.env
+    ports:
+      - "8001:8001"
+    restart: no
+    networks:
+      - safezone-net
+
+  # =========================
+  # Main Backend Agent
+  # =========================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: uv run --env-file .env python main.py
+    env_file:
+      - ./backend/.env
+    volumes:
+      - yolo_models:/app/models
+    restart: no
+    depends_on:
+      - teach-mode
+    networks:
+      - safezone-net
+
+  # =========================
+  # Demo Video Processor
+  # =========================
+  demo-worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    command: >
+      uv run --env-file .env python demo_video.py
+      --video workplace.mp4
+      --output safezone_demo.mp4
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./workplace.mp4:/app/workplace.mp4
+      - yolo_models:/app/models
+    restart: no
+    depends_on:
+      - backend
+    networks:
+      - safezone-net
+
+  # =========================
+  # React Frontend
+  # =========================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: no
+    networks:
+      - safezone-net
+
+volumes:
+  yolo_models:
+
+networks:
+  safezone-net:
+    driver: bridge
