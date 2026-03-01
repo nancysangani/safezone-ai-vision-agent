@@ -10,7 +10,14 @@ understands dangerous situations in context, and responds in real-time — all i
 
 ## 🎬 Demo
 
-**Live demo:** https://safezone-ai-vision-agent.vercel.app/
+**Live demo:** https://youtu.be/9jEyWlTntbA
+
+---
+
+## 🌐 Deployment
+
+- **Frontend:** Deployed on Vercel — https://safezone-ai-vision-agent.vercel.app/
+- **Backend:** Run locally or deploy to any server with Python 3.11+ and GPU (optional but recommended for YOLO inference speed)
 
 ---
 
