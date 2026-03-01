@@ -10,9 +10,7 @@ understands dangerous situations in context, and responds in real-time — all i
 
 ## 🎬 Demo
 
-![SafeZone AI Demo](demo.gif)
-
-**Live demo:** https://safezone-demo.vercel.app *(replace with your deployed URL)*
+**Live demo:** https://safezone-demo.vercel.app 
 
 ---
 
