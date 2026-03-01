@@ -10,7 +10,7 @@ understands dangerous situations in context, and responds in real-time — all i
 
 ## 🎬 Demo
 
-**Live demo:** https://safezone-demo.vercel.app 
+**Live demo:** https://safezone-ai-vision-agent.vercel.app/
 
 ---
 
