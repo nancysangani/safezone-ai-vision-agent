@@ -152,19 +152,6 @@ docker compose up --build
 
 ---
 
-## 🎬 Demo Script (For Judges)
-
-1. **Open** the dashboard at http://localhost:3000
-2. **Point** your webcam at yourself
-3. **Zone test**: Move into the top-right corner → trigger restricted zone alert
-4. **Fall detection**: Lie down or crouch still for 8+ seconds → CRITICAL alert fires
-5. **Crowd**: Have 5+ people appear in frame → density alert
-6. **Voice**: Listen — the AI agent speaks the alert aloud
-7. **Teach Mode**: Type *"Watch for anyone near the door"* → confirm it's active
-8. **Report**: Click "Generate Report" → Claude writes a professional incident report in real-time
-
----
-
 ## 📦 Project Structure
 
 ```
@@ -213,7 +200,7 @@ safezone-ai/
 
 ---
 
-## 🏆 Hackathon Criteria Mapping
+## 🏆 What Makes SafeZone AI Different
 
 | Criteria | How SafeZone Addresses It |
 |---|---|
@@ -226,7 +213,7 @@ safezone-ai/
 
 ---
 
-## 🗺 Roadmap (Post-Hackathon)
+## 🌟 Future Enhancements
 
 - [ ] Custom PPE detection via Roboflow (hard hat, safety vest, gloves)
 - [ ] Multi-camera correlation (alert when same person appears in 2 zones)
